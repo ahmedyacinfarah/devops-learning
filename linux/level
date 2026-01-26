@@ -63,4 +63,4 @@ nc (netcat) connects to the TCP service running locally on port 30000.
 
 Always use the exact Level password when prompted.
 
-The output from the service is the next level password, not stored in a file. 
+The output from the service is the next level password, not stored in a file.

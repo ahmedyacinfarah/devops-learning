@@ -1,4 +1,3 @@
-Linux for DevOps
 Introduction
 Linux is an open-source operating system that manages computer hardware, runs applications, and enables networking. It is the most widely used OS in servers, cloud platforms, DevOps environments, and containers.
 
@@ -340,4 +339,4 @@ Automation & DevOps: Scripts and deployment tools can read configurations to aut
 Summary: Configuration files are essential for maintaining application and system settings, enabling flexibility, security, and automation in DevOps workflows.
 
 Exercises used to reinforce and strengthen Linux understanding
-Playing the OverTheWire Bandit game allows me to practice using these common Linux commands. The repetition of using these commmands familiarises myself with Linux. This is fundamental as Linux is the foundation for all DevOps practices
+Playing the OverTheWire Bandit game allows me to practice using these common Linux commands. The repetition of using these commmands familiarises myself with Linux. This is fundamental as Linux is the foundation for all DevOps practices.

@@ -1,69 +1,68 @@
-Linux Fundamentals for DevOps
-Introduction
+# Linux Fundamentals & OverTheWire Bandit
 
-Linux is an open-source operating system responsible for managing hardware resources, running applications, and enabling networking. It is the backbone of modern infrastructure and is essential for DevOps engineers.
+## Introduction
+Linux is an open-source operating system that manages computer hardware, runs applications, and enables networking.  
+It is the backbone of **servers, cloud platforms, DevOps workflows, and containers**.
 
-In DevOps, Linux is not optional — it is a core requirement:
+For DevOps, Linux is not optional — it is a **core skill**:
 
-Most cloud servers (AWS, Azure, GCP) run Linux
+- Most cloud servers (AWS, Azure, GCP) run Linux
+- Tools like Docker, Kubernetes, Ansible, and Terraform rely heavily on Linux
+- Networking, security, and automation are primarily done in Linux environments
 
-Tools like Docker, Kubernetes, Ansible, and Terraform are built around Linux
+---
 
-Automation, security, networking, and CI/CD pipelines are primarily managed through Linux systems
+## Linux Basics
 
-Mastering Linux fundamentals is a prerequisite for working effectively in DevOps environments.
+### Kernel
+The kernel is the core of the Linux operating system.  
+It manages CPU, memory, devices, and system calls.
 
-1. Linux Basics
-Key Components
+### Shell
+The shell is a command interpreter that allows users to interact with the system.
 
-Kernel
-The core of Linux that communicates directly with hardware and manages system resources.
+Common shells:
+- `bash`
+- `zsh`
+- `fish`
 
-Shell
-A command-line interpreter that processes user commands (e.g., bash, zsh).
+### Terminal
+The terminal is the text-based interface where shell commands are entered and executed.
 
-Terminal
-A text-based interface where users interact with the shell.
+### Distributions (Distros)
+Linux comes in many distributions, each tailored for different use cases:
 
-Distributions (Distros)
-Different versions of Linux packaged with tools and package managers.
-Examples: Ubuntu, Debian, CentOS, Amazon Linux.
+- Ubuntu
+- Debian
+- CentOS / RHEL
+- Amazon Linux
 
-2. Linux File System
+---
 
-Linux uses a hierarchical directory structure:
+## Linux File System
 
-Directory	Purpose
-/	Root directory
-/home	User home directories
-/etc	Configuration files
-/var	Logs and variable data
-/bin	Essential binaries
-/usr	User applications and libraries
-Common File System Commands
+Linux uses a hierarchical file system structure:
+
+| Path | Purpose |
+|----|----|
+| `/` | Root directory |
+| `/home` | User home directories |
+| `/etc` | Configuration files |
+| `/var` | Logs and variable data |
+| `/bin` | Essential system binaries |
+| `/usr` | User applications and libraries |
+
+### Common File Commands
+```bash
 pwd            # Show current directory
 ls -l          # List files with details
 cd /path       # Change directory
 mkdir test     # Create directory
-rm file.txt    # Remove file
+rm file.txt    # Delete file
 cp a b         # Copy file
 mv a b         # Move or rename file
-
-
-DevOps relevance:
-Managing application files, logs, configurations, and deployment directories.
-
-3. File Permissions
-
-Every file in Linux has permissions for:
-
-Owner (u)
-
-Group (g)
-
-Others (o)
-
-Permission types:
+File Permissions
+Each file has three permission types:
 
 Read (r)
 
@@ -71,73 +70,66 @@ Write (w)
 
 Execute (x)
 
-Commands
-ls -l                 # View permissions
-chmod 755 file.sh     # Change permissions
-chown user:group f   # Change ownership
+Permissions apply to:
 
+Owner (u)
 
-DevOps relevance:
-Securing servers, controlling access, and ensuring services run with least privilege.
+Group (g)
 
-4. Processes & Services
+Others (o)
 
-Linux runs programs as processes and manages long-running applications as services.
+Permission Commands
+ls -l
+chmod 755 script.sh
+chown user:group file
+Processes & Services
+Linux runs programs as processes and manages long-running services.
 
-Commands
-ps aux                  # List processes
-top                     # Monitor processes
-kill <PID>              # Terminate process
+Process Management
+ps aux
+top
+kill <PID>
+Service Management
 systemctl start nginx
 systemctl stop nginx
 systemctl status nginx
+Package Management
+Different Linux distributions use different package managers.
 
-
-DevOps relevance:
-Monitoring applications, debugging failures, managing services in production.
-
-5. Package Management
-
-Linux distributions use package managers to install and update software.
-
-Ubuntu / Debian
+Debian / Ubuntu
 sudo apt update
 sudo apt upgrade -y
 sudo apt install nginx -y
-
 CentOS / Amazon Linux
 sudo yum update -y
 sudo yum install nginx -y
-
-
 DevOps relevance:
-Automating dependency installation in servers and CI/CD pipelines.
 
-6. Users & Groups
+Installing dependencies on servers
 
-Linux supports multi-user environments with strict permission controls.
+Automating installations in CI/CD pipelines
 
-Commands
+Users & Groups
+Linux supports multi-user environments with controlled permissions.
+
+Common Commands
 whoami
 id
 adduser devops
 passwd devops
 usermod -aG sudo devops
 groups
-
-
 DevOps relevance:
 
-Managing multiple engineers on shared servers
+Secure server access
 
-Restricting production access
+Least-privilege principle
 
-Avoiding root usage for security
+Managing production environments safely
 
-7. Environment Variables
+Environment Variables
 What Are Environment Variables?
-
-Environment variables store dynamic values that applications can access at runtime. They allow configuration without hardcoding values.
+Environment variables store dynamic configuration values used by programs.
 
 Examples:
 
@@ -149,61 +141,55 @@ DB_HOST
 
 API_KEY
 
-Common Commands (Linux)
-env
+Common Commands
 printenv
 echo $VAR_NAME
 export VAR_NAME=value
 unset VAR_NAME
-
-
 DevOps relevance:
 
-Secure configuration management
+Secure configuration
 
-CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins)
+CI/CD pipelines
 
-Environment-specific deployments
+Environment portability
 
-8. Binary and Octal Representation
-Binary (Base-2)
-
-Used internally by computers.
+Binary & Octal Representation
+Binary
+Base-2 number system using 0 and 1.
 
 Example:
 
 Decimal 10 → Binary 1010
 
-Octal (Base-8)
-
-Used heavily in Linux permissions.
+Octal
+Base-8 number system used for Linux permissions.
 
 Example:
 
-chmod 755 file
+chmod 755 → rwxr-xr-x
 
-7 → rwx
+Programs, Binaries & Shells
+Programs
+Executable instructions that perform tasks.
 
-5 → r-x
+Binaries
+Compiled programs executed directly by the OS.
 
-5 → r-x
+Examples:
 
-DevOps relevance:
-Understanding permissions, low-level system behavior, and security configurations.
+ls
 
-9. Programs, Binaries, and Shells
+cp
 
-Programs: Software that performs tasks
+mv
 
-Binaries: Compiled machine-readable executables (ls, cp, mv)
+Shells
+Interfaces for executing commands and scripts.
 
-Shells: Interfaces that allow command execution and scripting
+DevOps relies heavily on shell scripting for automation.
 
-DevOps relevance:
-Automation, scripting, process control, and system interaction.
-
-10. Configuration Files
-
+Configuration Files
 Configuration files define how systems and applications behave.
 
 Examples:
@@ -216,32 +202,52 @@ config.yaml
 
 Why they matter:
 
-Separate configuration from code
+Separation of config from code
 
-Enable environment-specific setups
+Environment flexibility
 
-Support automation and scalability
+Automation and reproducibility
 
-11. Reinforcement Through Practice: OverTheWire Bandit
+Practical Learning: OverTheWire Bandit
+To reinforce these Linux fundamentals, I practiced using the
+OverTheWire Bandit wargame.
 
-To reinforce these Linux fundamentals, I practiced using the OverTheWire Bandit wargame.
-
-The Bandit game forces hands-on usage of:
+Bandit focuses on:
 
 File permissions
 
-SSH
+SSH usage
 
 Text processing
 
-Environment variables
+Shell behavior
 
-Networking tools
+Linux security concepts
 
-Command-line utilities
+Each level requires applying real Linux commands to retrieve the next password.
 
-By repeatedly solving Bandit levels, I strengthened my command-line confidence and problem-solving skills. This practical repetition is critical, as Linux proficiency forms the foundation of all DevOps work.
+Why Bandit Matters for DevOps
+Builds strong command-line intuition
 
-Final Takeaway
+Teaches real-world troubleshooting
 
-Linux is the backbone of DevOps. Through structured learning and hands-on practice using tools like the OverTheWire Bandit game, these core concepts become second nature — enabling efficient, secure, and automated infrastructure management
+Reinforces Linux fundamentals through repetition
+
+Mirrors real server environments
+
+All completed Bandit levels are documented in individual levelX.md files.
+
+Summary
+Linux is the foundation of DevOps.
+Through structured learning and hands-on practice using OverTheWire Bandit, I strengthened my understanding of:
+
+Linux internals
+
+File systems and permissions
+
+Processes and services
+
+Users, groups, and security
+
+Automation-ready command-line workflows
+
